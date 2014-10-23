@@ -1,0 +1,26 @@
+{
+  "name": "parent.js",
+  "main": "parent.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/javidgon/parent.js",
+  "authors": [
+    "Jose Vidal <javidgon@gmail.com>"
+  ],
+  "description": "Javascript inheritance for a 5 years old",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "inheritance",
+    "wrapper",
+    "humans"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

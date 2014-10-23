@@ -64,6 +64,12 @@ console.log(s1 instanceof Person);
 ```
 You can see how the use of `parent's methods` is trivial with the attribute `super` from the instances.
 
+# Installation
+
+```javascript
+bower install parent.js
+```
+
 **Enjoy!**
 
 # Contribute
