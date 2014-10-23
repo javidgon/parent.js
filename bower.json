@@ -1,7 +1,7 @@
 {
   "name": "parent.js",
   "main": "parent.js",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "homepage": "https://github.com/javidgon/parent.js",
   "authors": [
     "Jose Vidal <javidgon@gmail.com>"

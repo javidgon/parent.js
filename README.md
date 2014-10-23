@@ -1,6 +1,6 @@
 parent.js
 =========
-
+[![Build Status](https://travis-ci.org/javidgon/parent.js.svg)](https://travis-ci.org/javidgon/parent.js)
 > Javascript inheritance for a 5 years old
 
 **Javascript** is great, we all know that. **Prototypal inheritance** is really powerful and some people can do awesome

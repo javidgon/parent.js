@@ -3,8 +3,6 @@
 Parent.js  may be freely distributed under the MIT license.
 */
 
-// Parent.js 0.0.1
-
 function Class(methods, BaseClass) {
 
   var klass = function() {
@@ -31,4 +29,8 @@ function Class(methods, BaseClass) {
     klass.prototype.initialize = function() {};
   }
   return klass;
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = Class;
 }
