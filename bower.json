@@ -1,7 +1,7 @@
 {
   "name": "parent.js",
-  "main": "parent.js",
-  "version": "0.0.3",
+  "main": "lib/parent.js",
+  "version": "0.0.4",
   "homepage": "https://github.com/javidgon/parent.js",
   "authors": [
     "Jose Vidal <javidgon@gmail.com>"
@@ -11,6 +11,7 @@
     "globals"
   ],
   "keywords": [
+    "javascript",
     "inheritance",
     "wrapper",
     "humans"

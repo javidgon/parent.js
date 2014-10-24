@@ -1,16 +1,16 @@
 {
   "name": "parent.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Javascript inheritance for a 5 years old",
-  "main": "parent.js",
-  "dependencies": {
-    "bower": "^1.3.12"
-  },
+  "main": "lib/parent.js",
+  "dependencies": {},
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.1",
+    "uglify-js": "^2.4.15"
   },
   "scripts": {
-    "test": "mocha tests.js"
+    "test": "mocha test/tests.js",
+    "minify": "./node_modules/.bin/uglifyjs -o lib/parent.min.js lib/parent.js"
   },
   "repository": {
     "type": "git",

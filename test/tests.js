@@ -1,7 +1,5 @@
 var assert = require("assert")
-var fs = require('fs');
-
-eval(fs.readFileSync('parent.js') + '');
+var Class = require('../lib/parent.js');
 
 describe('Parent.js', function(){
     var Person;
@@ -11,12 +9,14 @@ describe('Parent.js', function(){
     var bachelor = 'Computer Science';
     var something = 'Hello people';
 
-
     beforeEach(function(){
       Person = Class({
         initialize: function (name, surname) {
           this.name = name,
           this.surname = surname
+        },
+        __privateTalk: function (something) {
+          return 'Person: ' + something;
         },
         saySomething: function (something) {
           return 'Person: ' + something;
@@ -53,7 +53,7 @@ describe('Parent.js', function(){
       assert.equal(student instanceof Student, true);
     });
 
-    it('should be able the Child Class to access some parent\'s methods', function(){
+    it('should allow the Child Class to access some parent\'s methods', function(){
       var student = new Student(name, surname, bachelor);
       assert.equal(student.super.saySomething(something), 'Person: ' + something);
       assert.equal(student instanceof Person, true);
@@ -65,5 +65,19 @@ describe('Parent.js', function(){
       assert.equal(lastYearStudent.name, name);
       assert.equal(lastYearStudent.super.super.saySomething(something), 'Person: ' + something);
       assert.equal(lastYearStudent.super.saySomething(something), 'Student: ' + something);
+    });
+
+    it('should distinguish between class and instance methods', function(){
+      var student = new Student(name, surname, bachelor);
+      assert.equal(Student.privateTalk(something), 'Person: ' + something);
+      assert.equal('__privateTalk' in Student, false);
+      assert.equal('privateTalk' in student, false);
+      assert.equal('__privateTalk' in student, false);
+    });
+
+    it('should allow instances to access their Classes with the keyword "super"', function(){
+      var student = new Student(name, surname, bachelor);
+      assert.ok(student.class == student.constructor);
+      assert.ok(student.class == Student);
     });
 })

@@ -8,7 +8,7 @@ things with that, but let's face it, it has its quirks. Also 99% of the time we 
 
 **Parent.js** is a micro library (less than 30 lines of code), that allows you to create javascript `Classes` (or in `js` terminology `function constructors`) and, at the same time, inherit easily from other Classes.
 
-# Use
+## Use
 
 For using this library, you just need to create your `Classes` with the following syntax:
 ```javascript
@@ -64,18 +64,56 @@ console.log(s1 instanceof Person);
 ```
 You can see how the use of `parent's methods` is trivial with the attribute `super` from the instances.
 
-# Installation
+## Advanced Use
+A nice feature is the possibility of creating `class` methods by prepending `__` (two underscores) to the name of the method.
+
+```javascript
+var Person = Class({
+  initialize: function (name, surname) {
+    this.name = name;
+    this.surname = surname;
+  },
+  __thisIsAClassMethod: function () {
+    return 'Hi I\'m a classmethod!';
+  },
+  thisIsAnInstanceMethod: function () {
+    return 'Hi I\'m an instancemethod!';
+  }
+});
+
+var person = new Person('Jose', 'Vidal');
+
+// Class:
+console.log(Person.thisIsAClassMethod());
+// Output: 'Hi I\'m a classmethod!'
+
+console.log(Person.thisIsAnInstanceMethod());
+// Output: TypeError: undefined is not a function
+
+// Instance:
+console.log(person.thisIsAClassMethod());
+// Output: TypeError: undefined is not a function
+
+console.log(person.thisIsAnInstanceMethod());
+// Output: 'Hi I\'m an instancemethod!'
+```
+
+## Installation
 
 ```javascript
 bower install parent.js
 ```
+or
+```javascript
+npm install parent.js
+```
 
 **Enjoy!**
 
-# Contribute
+## Contribute
 
 Simply make a PR.
 
-# Licente
+## Licente
 
 MIT
