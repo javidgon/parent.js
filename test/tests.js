@@ -1,5 +1,5 @@
 var assert = require("assert")
-var Class = require('../lib/parent.js');
+var Class = require('../lib-cov/parent.js');
 
 describe('Parent.js', function(){
     var Person;

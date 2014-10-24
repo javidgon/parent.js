@@ -3,14 +3,17 @@
   "version": "0.0.4",
   "description": "Javascript inheritance for a 5 years old",
   "main": "lib/parent.js",
-  "dependencies": {},
   "devDependencies": {
+    "coveralls": "^2.11.2",
+    "jscoverage": "^0.5.6",
     "mocha": "^2.0.1",
+    "mocha-lcov-reporter": "0.0.1",
     "uglify-js": "^2.4.15"
   },
   "scripts": {
-    "test": "mocha test/tests.js",
-    "minify": "./node_modules/.bin/uglifyjs -o lib/parent.min.js lib/parent.js"
+    "test": "npm run coverage && mocha test/tests.js",
+    "minify": "./node_modules/.bin/uglifyjs -o lib/parent.min.js lib/parent.js",
+    "coverage": "./node_modules/.bin/jscoverage lib lib-cov"
   },
   "repository": {
     "type": "git",

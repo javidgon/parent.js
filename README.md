@@ -1,6 +1,7 @@
 parent.js
 =========
 [![Build Status](https://travis-ci.org/javidgon/parent.js.svg)](https://travis-ci.org/javidgon/parent.js)
+[![Coverage Status](https://coveralls.io/repos/javidgon/parent.js/badge.png)](https://coveralls.io/r/javidgon/parent.js)
 > Javascript inheritance for a 5 years old
 
 **Javascript** is great, we all know that. **Prototypal inheritance** is really powerful and some people can do awesome
@@ -57,15 +58,15 @@ console.dir(student.sayHi());
 console.dir(student.super.sayHi());
 // Output: "Hi I'm a Person!" 
 
-console.log(s1 instanceof Student);
+console.log(student instanceof Student);
 // Output: true 
-console.log(s1 instanceof Person);
+console.log(student instanceof Person);
 // Output: true 
 ```
 You can see how the use of `parent's methods` is trivial with the attribute `super` from the instances.
 
 ## Advanced Use
-A nice feature is the possibility of creating `class` methods by prepending `__` (two underscores) to the name of the method.
+A nice feature is the possibility of creating `class` methods (only accessible by the class) by prepending `__` (two underscores) to the name of the method.
 
 ```javascript
 var Person = Class({
